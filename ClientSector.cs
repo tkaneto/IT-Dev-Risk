@@ -1,17 +1,18 @@
 using System;
+using System.ComponentModel;
 using System.IO;
 
-namespace IT-DEV-Risk
+namespace DevRisk
 {
-    public Enum ClientSector {
+    public enum ClientSector {
 
-        [Description("Unkwnown")]
+        [DescriptionAttribute("Unkwnown")]
         Unknown = 0,
 
-        [Description("Private")]
+        [DescriptionAttribute("Private")]
         Private = 1,
 
-        [Description("Public")]
+        [DescriptionAttribute("Public")]
         Public = 2
     }
 }

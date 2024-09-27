@@ -1,0 +1,15 @@
+c:\Projetos\IT-Dev-Risk\IT-Dev-Risk\obj\Debug\net8.0\IT-DEV-Risk.GeneratedMSBuildEditorConfig.editorconfig
+c:\Projetos\IT-Dev-Risk\IT-Dev-Risk\obj\Debug\net8.0\IT-DEV-Risk.AssemblyInfoInputs.cache
+c:\Projetos\IT-Dev-Risk\IT-Dev-Risk\obj\Debug\net8.0\IT-DEV-Risk.AssemblyInfo.cs
+c:\Projetos\IT-Dev-Risk\IT-Dev-Risk\obj\Debug\net8.0\IT-DEV-Risk.csproj.CoreCompileInputs.cache
+c:\Projetos\IT-Dev-Risk\IT-Dev-Risk\obj\Debug\net8.0\IT-DEV-Risk.sourcelink.json
+c:\Projetos\IT-Dev-Risk\IT-Dev-Risk\bin\Debug\net8.0\IT-DEV-Risk.exe
+c:\Projetos\IT-Dev-Risk\IT-Dev-Risk\bin\Debug\net8.0\IT-DEV-Risk.deps.json
+c:\Projetos\IT-Dev-Risk\IT-Dev-Risk\bin\Debug\net8.0\IT-DEV-Risk.runtimeconfig.json
+c:\Projetos\IT-Dev-Risk\IT-Dev-Risk\bin\Debug\net8.0\IT-DEV-Risk.dll
+c:\Projetos\IT-Dev-Risk\IT-Dev-Risk\bin\Debug\net8.0\IT-DEV-Risk.pdb
+c:\Projetos\IT-Dev-Risk\IT-Dev-Risk\obj\Debug\net8.0\IT-DEV-Risk.dll
+c:\Projetos\IT-Dev-Risk\IT-Dev-Risk\obj\Debug\net8.0\refint\IT-DEV-Risk.dll
+c:\Projetos\IT-Dev-Risk\IT-Dev-Risk\obj\Debug\net8.0\IT-DEV-Risk.pdb
+c:\Projetos\IT-Dev-Risk\IT-Dev-Risk\obj\Debug\net8.0\IT-DEV-Risk.genruntimeconfig.cache
+c:\Projetos\IT-Dev-Risk\IT-Dev-Risk\obj\Debug\net8.0\ref\IT-DEV-Risk.dll

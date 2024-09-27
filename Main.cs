@@ -1,35 +1,40 @@
 using System;
+using System.Globalization;
 using System.IO;
+using DevRisk;
 
-namespace IT-DEV-Risk
+namespace DevRisk
 {
+    public class ITDevRisk {
 
-    /// <summary>
-    /// IT-DEV-RISK Program
-    /// </summary>
-    /// <returns>Returns 0 for success and -1 for any failure.</returns>
-    public static int Main()
-    {
-        try
+        
+        /// <summary>
+        /// IT-DEV-RISK Program
+        /// </summary>
+        public static void Main()
         {
-            Console.WriteLine("IT-DEV-RISK started at {1:T}.", DateTime.Now);
+            try
+            {
+                Console.WriteLine("IT-DEV-RISK started at {1:T}.", DateTime.Now);
 
-            TradesProcess p = new TradesProcess();
+                TradeProcess p = new TradeProcess();
 
-            p.GetInputTrades();
+                p.GetInputTrades();
 
-            p.ProcessTradesRules();
+                p.AssignRiskCategory();
 
-            p.PrintTrades();
+                p.PrintTradesRiskCategory();
 
-            Console.WriteLine("IT-DEV-RISK acomplished at {1:T}.", DateTime.Now());
+                Console.WriteLine("IT-DEV-RISK acomplished at {1:T}.", DateTime.Now);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Unknown error found, program aborted.");
+                Console.WriteLine("Technical Error Description: ", ex.Message);
+            }
+
+            return;
         }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Unknown error found, program aborted.");
-            return -1;
-        }
 
-        return 0;
     }
 }

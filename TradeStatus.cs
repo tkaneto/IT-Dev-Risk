@@ -1,12 +1,13 @@
 using System;
 using System.IO;
+using DevRisk;
 
-namespace IT-DEV-Risk
+namespace DevRisk
 {
-    public Enum TradeStatus {
-        UNKNOWN = 0
-        EXPIRED = 1
-        MEDIUMRISK = 2
+    public enum TradeStatus {
+        UNKNOWN = 0,
+        EXPIRED = 1,
+        MEDIUMRISK = 2,
         HIGHRISK = 3
     }
 }

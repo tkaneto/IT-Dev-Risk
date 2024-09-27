@@ -1,88 +1,95 @@
 using System;
+using System.ComponentModel;
+using System.Globalization;
 using System.IO;
+using System.Linq.Expressions;
+using DevRisk;
 
-
-namespace IT-DEV-Risk
+namespace DevRisk
 {
 
-    public internal class TradeProcess()
+    public class TradeProcess()
     {
-        protected internal DateTime referenceDate;
-        protected internal List<ITrade> tradesList;
+        protected DateTime referenceDate;
+        protected List<Trade> tradesList = new List<Trade>();
 
-        public internal GetInputTrades()
+        public void GetInputTrades()
         {
             // Get the reference date
-            referenceDate = GetTradesReferenceDate();
+            referenceDate = GetReferenceDate();
 
             // Get the list of trades
             tradesList = GetTrades();
         }
-
-        protected internal DateTime GetTradesReferenceDate () {
-            this.referenceDate = DateTime.Parse(Console.ReadLine());
+        
+        protected DateTime GetReferenceDate () {
+            DateTime referenceDate = Convert.ToDateTime(Console.ReadLine());
             return referenceDate;
         }
 
-        private static List<ITrade> GetTrades() {
+        protected List<Trade> GetTrades() {
 
-            List<Itrade> list = new List<Trade>();
+            int expectedNumberOfTrades = Convert.ToInt32(Console.ReadLine());
 
-            int expectedNumberOfTrades = int.Parse(Console.ReadLine());
-
-            for (int i; i < expectedNumberOfTrades; i++) {
-                list.Add(GetTradeInput());
+            for (int i = 0; i < expectedNumberOfTrades; i++) {
+                tradesList.Add(GetTradeInput());
             }
 
-            return list;
+            return tradesList;
         }
 
-        public static Trade GetTradeInput() {
+        protected Trade GetTradeInput() {
 
-            string entrada = Console.ReadLine();
+            Trade itemResult;
 
-            string[] parameters = entrada.Split(' ');
+            try {
+                string? entry = Console.ReadLine();
+                
+                string[] parameters = entry.Split(' ');
 
-            decimal ammountValue = decimal.Parse(parameters[0]);
+                double ammountValue = Convert.ToDouble(parameters[0]);
 
-            string clientSector = parameters[1];
+                string clientSector = (string) parameters[1];
 
-            // FORMAT REQUIREMENT (MM/dd/yyyy)
-            DateTime nextPendingPaymentDate = DateTime.ParseExact(parameters[2], "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                // FORMAT REQUIREMENT (MM/dd/yyyy)
+                DateTime nextPendingPaymentDate = DateTime.ParseExact(parameters[2], "MM/dd/yyyy", CultureInfo.InvariantCulture);
 
-            Trade itemResult = new Trade(ammountValue, clientSector, nextPendingPaymentDate);
+                itemResult = new Trade(ammountValue, clientSector, nextPendingPaymentDate);
+
+            }
+            catch {
+                throw new FormatException("Argumentos de Input são inválidos, favor verificar.");
+            }
 
             return itemResult;
         }
 
-        public static List<ITrade> CheckTradeRules() {
+        public void AssignRiskCategory() {
             
             foreach (ITrade i in tradesList) {
 
-                if (DateTime.Diff(i.NextPaymentDate, referenceDate.AddDays(30)) < 0) {
-                    i.RiskStatus = RiskStatus.EXPIRED;
+                if (DateTime.Compare(i.NextPaymentDate, referenceDate.AddDays(30)) < 0) {
+                    i.TradeStatus = TradeStatus.EXPIRED;
                 }
                 
-                if (i.ammoutValue > 1,000,000.00) {
+                if (i.Value > 1000000) {
 
                     if (i.ClientSector.Equals(ClientSector.Private)) {
-                        i.RiskStatus = RiskStatus.HIGHRISK;
+                        i.TradeStatus = TradeStatus.HIGHRISK;
                     }
 
                     if (i.ClientSector.Equals(ClientSector.Public)) {
-                        i.RiskStatus = RiskStatus.MEDIUMRISK;
+                        i.TradeStatus = TradeStatus.MEDIUMRISK;
                     }
                 }
 
-                return i.RiskStatus = RiskStatus.UNKNOWN;
+                i.TradeStatus = TradeStatus.UNKNOWN;
             }
-
-            return ;
         }
 
-        public static PrintTrades(List<ITrade> listTrades) {
+        public void PrintTradesRiskCategory() {
 
-            foreach (Itrade item in listTrades)
+            foreach (ITrade item in tradesList)
             {
                 Console.WriteLine(item.TradeStatus);
             }

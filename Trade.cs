@@ -1,18 +1,21 @@
-using system;
+using DevRisk;
 
-namespace IT-DEV-Risk
+namespace DevRisk
 {
     public class Trade : ITrade {
 
-        double Value { get; set; } // indicates the transaction amount in dollars
-        ClientSector ClientSector { get; set; } // indicates the client's sector which can be "Public" or "Private"
-        DateTime NextPaymentDate { get; set; } // indicates when the newxt payment from the client to the bank is expected
-        enum RiskStatus { get; set; } // Indicates HIGHRISK, MEDIUMRISK, EXPIRED and eventual others
+        public double Value { get; set; } // indicates the transaction amount in dollars
 
+        public string ClientSector { get; set; } // indicates the client's sector which can be "Public" or "Private"
+
+        public DateTime NextPaymentDate { get; set; } // indicates when the newxt payment from the client to the bank is expected
+
+        public TradeStatus TradeStatus { get; set; } // Indicates HIGHRISK, MEDIUMRISK, EXPIRED and eventual others
+        
         public Trade(double ammoutValue, string clientSector, DateTime nextPayment)
         {
-            this.Value = ammoutValue;
-            this.ClientSector = clientSector.Enum(clientSector);
+            this.Value = ammoutValue; // TODO: Would be better if we could receive AN DECIMAL TYPE, need Architect Team approval
+            this.ClientSector = clientSector; // TODO: Would be better if we could receive AN ENUM TYPE, need  Architect Team approval
             this.NextPaymentDate = nextPayment;
         }
     }
