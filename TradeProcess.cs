@@ -82,8 +82,9 @@ namespace DevRisk
                         i.TradeStatus = TradeStatus.MEDIUMRISK;
                     }
                 }
-
-                i.TradeStatus = TradeStatus.UNKNOWN;
+                else {
+                    i.TradeStatus = TradeStatus.UNKNOWN;
+                }
             }
         }
 
