@@ -74,7 +74,7 @@ namespace DevRisk
                 
                 if (i.Value > 1000000) {
 
-                    if (i.ClientSector.Equals(ClientSector.Private.ToString()) {
+                    if (i.ClientSector.Equals(ClientSector.Private.ToString())) {
                         i.TradeStatus = TradeStatus.HIGHRISK;
                     }
 
