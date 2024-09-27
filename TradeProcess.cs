@@ -74,11 +74,11 @@ namespace DevRisk
                 
                 if (i.Value > 1000000) {
 
-                    if (i.ClientSector.Equals(ClientSector.Private)) {
+                    if (i.ClientSector.Equals(ClientSector.Private.ToString()) {
                         i.TradeStatus = TradeStatus.HIGHRISK;
                     }
 
-                    if (i.ClientSector.Equals(ClientSector.Public)) {
+                    if (i.ClientSector.Equals(ClientSector.Public.ToString())) {
                         i.TradeStatus = TradeStatus.MEDIUMRISK;
                     }
                 }
