@@ -15,7 +15,7 @@ namespace DevRisk
         {
             try
             {
-                Console.WriteLine("IT-DEV-RISK started at {0:T}.", DateTime.Now);
+                //Console.WriteLine("IT-DEV-RISK started at {0:T}.", DateTime.Now);
 
                 TradeProcess p = new TradeProcess();
 
@@ -25,7 +25,7 @@ namespace DevRisk
 
                 p.PrintTradesRiskCategory();
 
-                Console.WriteLine("IT-DEV-RISK acomplished at {0:T}.", DateTime.Now);
+                //Console.WriteLine("IT-DEV-RISK acomplished at {0:T}.", DateTime.Now);
             }
             catch (Exception ex)
             {

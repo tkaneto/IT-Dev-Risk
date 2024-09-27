@@ -16,14 +16,20 @@ namespace DevRisk
         public void GetInputTrades()
         {
             // Get the reference date
-            referenceDate = GetReferenceDate();
+            referenceDate = GetReferenceDateFromInput();
 
             // Get the list of trades
             tradesList = GetTrades();
         }
         
-        protected DateTime GetReferenceDate () {
-            DateTime referenceDate = Convert.ToDateTime(Console.ReadLine());
+        protected DateTime GetReferenceDateFromInput() {
+            DateTime referenceDate = new DateTime();
+
+            string input = Console.ReadLine();
+
+            if (input != null) {
+                referenceDate = DateTime.ParseExact(input, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+            }
             return referenceDate;
         }
 
@@ -68,22 +74,24 @@ namespace DevRisk
             
             foreach (ITrade i in tradesList) {
 
+                i.TradeStatus = TradeStatus.UNKNOWN;
+
                 if (DateTime.Compare(i.NextPaymentDate, referenceDate.AddDays(30)) < 0) {
                     i.TradeStatus = TradeStatus.EXPIRED;
+                    continue;
                 }
                 
                 if (i.Value > 1000000) {
 
                     if (i.ClientSector.Equals(ClientSector.Private.ToString())) {
                         i.TradeStatus = TradeStatus.HIGHRISK;
+                        continue;
                     }
 
                     if (i.ClientSector.Equals(ClientSector.Public.ToString())) {
                         i.TradeStatus = TradeStatus.MEDIUMRISK;
+                        continue;
                     }
-                }
-                else {
-                    i.TradeStatus = TradeStatus.UNKNOWN;
                 }
             }
         }

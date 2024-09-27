@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Projetos\\IT-Dev-Risk\\IT-Dev-Risk\\IT-DEV-Risk.csproj": {}
+    "C:\\Projetos\\IT-Dev-Risk\\IT-Dev-Risk\\IT-DEV-Risk.csproj": {}
   },
   "projects": {
-    "c:\\Projetos\\IT-Dev-Risk\\IT-Dev-Risk\\IT-DEV-Risk.csproj": {
+    "C:\\Projetos\\IT-Dev-Risk\\IT-Dev-Risk\\IT-DEV-Risk.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Projetos\\IT-Dev-Risk\\IT-Dev-Risk\\IT-DEV-Risk.csproj",
+        "projectUniqueName": "C:\\Projetos\\IT-Dev-Risk\\IT-Dev-Risk\\IT-DEV-Risk.csproj",
         "projectName": "IT-DEV-Risk",
-        "projectPath": "c:\\Projetos\\IT-Dev-Risk\\IT-Dev-Risk\\IT-DEV-Risk.csproj",
+        "projectPath": "C:\\Projetos\\IT-Dev-Risk\\IT-Dev-Risk\\IT-DEV-Risk.csproj",
         "packagesPath": "C:\\Users\\tkaneto\\.nuget\\packages\\",
-        "outputPath": "c:\\Projetos\\IT-Dev-Risk\\IT-Dev-Risk\\obj\\",
+        "outputPath": "C:\\Projetos\\IT-Dev-Risk\\IT-Dev-Risk\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tkaneto\\AppData\\Roaming\\NuGet\\NuGet.Config"

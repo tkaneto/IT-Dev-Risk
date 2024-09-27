@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = IT_DEV_Risk
-build_property.ProjectDir = c:\Projetos\IT-Dev-Risk\IT-Dev-Risk\
+build_property.ProjectDir = C:\Projetos\IT-Dev-Risk\IT-Dev-Risk\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
